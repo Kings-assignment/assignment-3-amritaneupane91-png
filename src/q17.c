@@ -1,20 +1,30 @@
 // Write a function named calculatePower that takes two integers, base and exponent, as input and returns the result of raising the base to the exponent.
 
-#include <stdio.h>
-#include <math.h>
+#include<stdio.h>
+int calculatePower(int base, int exponent)
+{
+    int result=1;
 
-int calculatePower(int base, int exponent) {
-return pow(base, exponent);
-
+    for( int i=0; i<exponent; i++)
+    {
+        result=result*base;
+    }
+    return result;
 }
 
-int main() {
-    int b,e;
-    printf("Enter base and exponent:");
-    scanf("%d %d", &b, &e);
+int main(){
+    int base, exponent;
 
-    int power= calculatePower (b,e);
-    printf("Result is: %d.\n", power);
+    printf("Enter the base:");
+    scanf(" %d",&base);
+
+    printf("Enter the exponent:");
+    scanf(" %d",&exponent);
+
+    int result=calculatePower(base,exponent);
+
+    printf("The power is %d\n",result);
 
     return 0;
 }
+
